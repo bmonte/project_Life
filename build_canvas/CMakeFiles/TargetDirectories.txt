@@ -1,0 +1,3 @@
+/home/bmonte/Documentos/LP1/project_life/build_canvas/CMakeFiles/rebuild_cache.dir
+/home/bmonte/Documentos/LP1/project_life/build_canvas/CMakeFiles/canvas.dir
+/home/bmonte/Documentos/LP1/project_life/build_canvas/CMakeFiles/edit_cache.dir

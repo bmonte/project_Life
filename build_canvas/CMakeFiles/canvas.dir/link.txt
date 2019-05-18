@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -pedantic -ansi -O3    CMakeFiles/canvas.dir/src/canvas.cpp.o CMakeFiles/canvas.dir/src/driver_canvas.cpp.o CMakeFiles/canvas.dir/src/lodepng.cpp.o  -o canvas 
