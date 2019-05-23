@@ -1,0 +1,3 @@
+/home/bmonte/Documentos/LP1/project_life/build/CMakeFiles/rebuild_cache.dir
+/home/bmonte/Documentos/LP1/project_life/build/CMakeFiles/glife.dir
+/home/bmonte/Documentos/LP1/project_life/build/CMakeFiles/edit_cache.dir

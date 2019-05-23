@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -pedantic    CMakeFiles/MAGOS.dir/src/life.cpp.o CMakeFiles/MAGOS.dir/src/main.cpp.o  -o MAGOS 

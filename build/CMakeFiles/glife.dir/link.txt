@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -pedantic    CMakeFiles/glife.dir/src/file.cpp.o CMakeFiles/glife.dir/src/inputReader.cpp.o CMakeFiles/glife.dir/src/life.cpp.o CMakeFiles/glife.dir/src/main.cpp.o  -o glife 

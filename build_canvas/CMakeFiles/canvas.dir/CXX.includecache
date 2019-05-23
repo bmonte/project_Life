@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/bmonte/Documentos/LP1/project_life/dev_canvas/../lib/common.h
+cstring
+-
+iostream
+-
+map
+-
+
 /home/bmonte/Documentos/LP1/project_life/dev_canvas/include/canvas.h
 vector
 -
@@ -19,14 +27,6 @@ iomanip
 -
 common.h
 /home/bmonte/Documentos/LP1/project_life/dev_canvas/include/common.h
-
-/home/bmonte/Documentos/LP1/project_life/dev_canvas/include/common.h
-cstring
--
-iostream
--
-map
--
 
 /home/bmonte/Documentos/LP1/project_life/dev_canvas/include/lodepng.h
 string.h
