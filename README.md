@@ -51,15 +51,15 @@ Para rodar o arquivo gerado anteriormente:
 > $ ./glife [<options>] <input_file>
 
 As opções de simulação são:
-+ --help: Mostra um texto de ajuda;
-+ --rule <code>: Define as regras usadas pela simulação pelo código BX/SXX;
-+ --imgdir <path>: Define qual a pasta usada para salvar as imagens geradas pelo programa;
-+ --maxgen <num>: Define a quantidade máxima de gerações da simulação;
-+ --fps <num>: Define o numero de gerações mostradas pela saida do terminal/arquivo;
-+ --blocksize <num>: Define o tamanho do pixel. Padrão é 5;
-+ --bkgcolor <color>: Define a cor de fundo. Padrão GREEN;
-+ --alivecolor <color>: Define a cor da celula viva. Padrão RED;
-+ --outfile <filename>: Define o arquivo de texto padrão pra gravar a saida do programa;
++ --help Mostra um texto de ajuda;
++ --rule <code> Define as regras usadas pela simulação pelo código BX/SXX;
++ --imgdir <path> Define qual a pasta usada para salvar as imagens geradas pelo programa;
++ --maxgen <num> Define a quantidade máxima de gerações da simulação;
++ --fps <num> Define o numero de gerações mostradas pela saida do terminal/arquivo;
++ --blocksize <num> Define o tamanho do pixel. Padrão é 5;
++ --bkgcolor <color> Define a cor de fundo. Padrão GREEN;
++ --alivecolor <color> Define a cor da celula viva. Padrão RED;
++ --outfile <filename> Define o arquivo de texto padrão pra gravar a saida do programa;
 
 # Implementações futuras
 
