@@ -44,6 +44,7 @@ da geração atual é considerada estável; e a configuração da geração atua
 
 Para gerar o arquivo **glife** executavel:
 > $ cd build
+
 > $ make
 
 Para rodar o arquivo gerado anteriormente:
@@ -63,6 +64,8 @@ As opções de simulação são:
 # Implementações futuras
 
 O programa apresenta 1 pequeno "problema" e duas opções não concluidas, sendo ele:
-	* Quando detectada a configuração "stable" é printado uma geração a mais;
-    * O programa só tem como saída o terminal, sendo o modo de texto implementado mas defeituoso, assim como o por imagem.
+	
+	+ Quando detectada a configuração "stable" é printado uma geração a mais;
+
+	+ O programa só tem como saída o terminal, sendo o modo de texto implementado mas defeituoso, assim como o por imagem.
 **Developed by Brunno Monte (bmonte@outlook.com) and Nathan Andre.
