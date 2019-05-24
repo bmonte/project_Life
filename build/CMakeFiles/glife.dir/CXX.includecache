@@ -41,6 +41,8 @@ sstream
 /home/bmonte/Documentos/LP1/project_life/include/inputReader.hpp
 vector
 -
+utility
+-
 cstring
 -
 cstdlib
@@ -51,6 +53,8 @@ iostream
 /home/bmonte/Documentos/LP1/project_life/include/life.hpp
 iostream
 -
+algorithm
+-
 vector
 -
 cstring
@@ -59,6 +63,8 @@ iomanip
 -
 common.h
 /home/bmonte/Documentos/LP1/project_life/include/common.h
+file.hpp
+/home/bmonte/Documentos/LP1/project_life/include/file.hpp
 
 /home/bmonte/Documentos/LP1/project_life/src/file.cpp
 ../include/file.hpp
@@ -77,9 +83,11 @@ system_error
 /home/bmonte/Documentos/LP1/project_life/src/main.cpp
 iostream
 -
-locale
+cstdlib
 -
-string
+chrono
+-
+thread
 -
 ../include/common.h
 /home/bmonte/Documentos/LP1/project_life/include/common.h

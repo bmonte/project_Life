@@ -12,15 +12,19 @@ namespace libs{
     public:
       //==== Special methods
       /// Default constructor
-      File(std::string);
-      File(std::string, std::string);
+      File(std::string _input)
+      : f_input{_input}, f_output{""}
+      { /* EMṔTY */ }
+      //File(std::string, std::string);
       File(void) = delete;
       /// Default destructor
       ~File();
       //=== Support methods.
       bool is_eof(void); ///Checks whether we reached the "end of file".
       bool is_open(void);
-      int line_lenght(void);
+      void setOutput( std::string _output )
+      { f_output.open(_output); }
+      //int line_lenght(void);
       //=== In/Out methods.
       std::string read_file(void);
       char read_character(void);

@@ -2,6 +2,7 @@
 #define LIFE_HPP
 
 #include <iostream>
+#include <algorithm>
 #include <vector>
 using std::vector;
 #include <cstring>
@@ -9,18 +10,20 @@ using std::vector;
 
 #include "common.h"
 using namespace life;
+#include "file.hpp"
 
 class Life
 {
     public:
         //=== Alias
         typedef std::string cell_t; //!< Type of a cell
-        typedef vector<bool> grid_t;
+        typedef vector<bool> grid_t; //!< Grid type <bool>
+        typedef vector<Point2> log_t; //!< Living cells log type
 
     public:
         //=== Special members
             /// Constructor
-            Life( size_t w=0, size_t h=0, cell_t l_cell="*", cell_t d_cell=" " )
+            Life( size_t w=0, size_t h=0, cell_t l_cell="*", cell_t d_cell="~" )
                 : m_rows{ w }, m_cols{ h }, m_live_cell{ l_cell }, m_dead_cell{ d_cell }
             {
                 // Remember to adjust the virtual size to real dimensions.
@@ -34,14 +37,17 @@ class Life
                 // Do nothing, RAII (resource acquisition is resource initialization) approach
             }
 
-
         //=== Members
             /// Reset all the grid
             void reset ( void );
             /// Update the grid 
             void update ( void );
+            /// Update the log
+            void updateLog ( log_t& );
             /// Print the current generation
             void print ( void );
+            /// Print the current generation on a file
+            void print_file ( libs::File& f );
             /// Print welcome message
             void welcome_message( void );
             /// Set all the living cells in the grid
@@ -76,8 +82,10 @@ class Life
         size_t m_cols; //!< Grid height
         cell_t m_live_cell; //!< Symbol for a living cell
         cell_t m_dead_cell; //!< Symbol for a dead cell
-        int born_rule, survive_rule[2];
         grid_t m_grid; //!< Grid of a simulation
+        log_t m_curr_generation; //!< Vector with living cells position
+        vector < log_t > m_log; //!< Log with all living cells in all gens
+        int born_rule, survive_rule[2]; //!< Simulation rule
 };
 
 

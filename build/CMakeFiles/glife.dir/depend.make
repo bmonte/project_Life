@@ -8,6 +8,7 @@ CMakeFiles/glife.dir/src/inputReader.cpp.o: ../include/inputReader.hpp
 CMakeFiles/glife.dir/src/inputReader.cpp.o: ../src/inputReader.cpp
 
 CMakeFiles/glife.dir/src/life.cpp.o: ../include/common.h
+CMakeFiles/glife.dir/src/life.cpp.o: ../include/file.hpp
 CMakeFiles/glife.dir/src/life.cpp.o: ../include/life.hpp
 CMakeFiles/glife.dir/src/life.cpp.o: ../src/life.cpp
 

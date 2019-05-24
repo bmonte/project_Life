@@ -5,7 +5,7 @@ void Life::reset( void )
     // Remember to adjust the virtual size to real dimensions.
     m_grid.resize( m_rows * m_cols );
     // Set all the position with dead cells 
-    m_grid.assign( m_grid.size(), false );
+    m_grid.assign( m_grid.size(), false);
 }
 
 void Life::update( void )
@@ -14,8 +14,21 @@ void Life::update( void )
 
     for (auto x{0u}; x < rows(); x++)
         for (auto y{0u}; y < cols(); y++)
+        {
+            if ( past_gen[y * cols() + x] )
+            {
+                m_curr_generation.push_back(Point2(x, y));
+            }
             past_gen[y * cols() + x] = rule(neighbors(m_grid, Point2(x, y)), m_grid[y * cols() + x]);
-    m_grid.swap(past_gen); 
+        }
+    m_grid.swap(past_gen);
+    updateLog(m_curr_generation);
+}
+
+void Life::updateLog( log_t &curr_gen )
+{
+    m_log.push_back( curr_gen );
+    curr_gen.clear();
 }
 
 void Life::print( void )
@@ -36,17 +49,33 @@ void Life::print( void )
         }
 }
 
+void Life::print_file( libs::File& f )
+{
+    for ( auto x{0u}; x < rows(); x++ )
+        for ( auto y{0u}; y < cols(); y++ )
+        {
+            if ( y == 0) { f.write_file(" ["); }
+            if ( m_grid[y * cols() + x] )
+            {
+                f.write_file(l_cell());
+            } else {
+                f.write_file(d_cell());
+            }
+            if (y == cols() - 1) { f.write_file("]\n"); }
+        }
+}
+
 void Life::welcome_message( void )
 {
     std::cout << std::endl;
     std::cout << std::setfill ('*') << std::setw(74) << "*" << std::endl;
-    std::cout << "\t\tWelcome to Conway’s game of Life." << std::endl;
+    std::cout << "\t\t   Welcome to Conway’s game of Life." << std::endl;
     std::cout << "\tRunning a simulation on a grid of size " << rows() << " by " 
               << cols() << " in which" << std::endl;
     std::cout << "\teach cell can either be occupied by an organism or not." << std::endl;
     std::cout << "\tThe occupied cells change from generation to generation" << std::endl; 
     std::cout << "\taccording to the number of neighboring cells which are alive." << std::endl;
-    std::cout << std::setfill ('*') << std::setw (74) << "*" << std::endl;
+    std::cout << std::setfill ('*') << std::setw(75) << "*" << std::endl;
 }
 
 void Life::set_cell_position ( const Point2 &p )
@@ -78,7 +107,6 @@ int Life::neighbors(const grid_t &grid, const Point2 &p )
 
 bool Life::rule( int qnt_neighbors, bool LoD )
 {
-    set_rule(3, 2, 3);
     bool cell_state = LoD;
     
     if ( qnt_neighbors == born_rule)
@@ -105,4 +133,15 @@ bool Life::extinct( void )
     }
     
     return is_extinct; 
+}
+
+bool Life::stable( void )
+{
+    bool is_stable{false};
+
+    if ( m_log.size() > 1 )
+        for (size_t i=0; i < m_log.size(); i++)
+            if ( m_log.back() == m_log[i-1] )
+                    is_stable=true;
+    return is_stable;
 }
